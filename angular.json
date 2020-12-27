@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "hydra-forum"
+  "defaultProject": "hydra-forum",
+  "cli": {
+    "analytics": false
+  }
 }
