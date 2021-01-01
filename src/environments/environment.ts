@@ -3,9 +3,22 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCUaA9rrjxyQsfRjcX7kEmhZcJwzJowMuU",
+    authDomain: "hydra-forum.firebaseapp.com",
+    databaseURL: "https://hydra-forum-default-rtdb.firebaseio.com",
+    projectId: "hydra-forum",
+    storageBucket: "hydra-forum.appspot.com",
+    messagingSenderId: "60545800937",
+    appId: "1:60545800937:web:a9933266bdff4b42d2ae78",
+    measurementId: "G-C5SC2X8GJ5"
+  }
 };
+// firebase.initializeApp(config);
 
+// Get a reference to the database service
+// var database = firebase.database();
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

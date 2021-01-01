@@ -10,6 +10,12 @@ import { SearchComponent } from './search/search.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddElectorComponent } from './add-elector/add-elector.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { VoterListComponent } from './voter-list/voter-list.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +25,16 @@ import { FooterComponent } from './footer/footer.component';
     ErrorPageComponent,
     SearchComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AddElectorComponent,
+    VoterListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent],
