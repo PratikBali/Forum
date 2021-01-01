@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import Messages from './locale/lang';
+import Messages from './common/locale/lang';
 
 @Component({
   selector: 'app-root',

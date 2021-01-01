@@ -3,7 +3,7 @@ import { SearchService } from './search.service';
 import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { IVoter } from './search.model';
-import { IvyParser } from '@angular/compiler';
+import { InvokeMethodExpr, IvyParser } from '@angular/compiler';
 
 @Component({
   selector: 'app-search',
@@ -23,11 +23,11 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getAllVoter();
     // this.putVoter();
+    // this.getAllVoter();
   }
   putVoter(): void {
-    const voter = {
+    const voter: IVoter = {
       id: '265',
       sirname: 'बळी',
       name: 'उषा',
@@ -39,6 +39,18 @@ export class SearchComponent implements OnInit {
       whatsapp: '9922508855',
       fbId: ''
     };
+    // const voter = {
+    //   id: '266',
+    //   sirname: 'बळी',
+    //   name: 'वैष्णव',
+    //   middleName: 'संजय',
+    //   ward: '3',
+    //   area: 'गावठाण',
+    //   location: 'zargadwadi',
+    //   phone: '9665090197',
+    //   whatsapp: '9665090197',
+    //   fbId: 'fb.me/vaishnav.bali.9'
+    // };
     // this.voterRef.set(voter);
     // this.updateLocalStore();
     // const data = this.create(voter);
@@ -47,16 +59,7 @@ export class SearchComponent implements OnInit {
   }
 
   getAllVoter(): any {
-    this.searchService.fetchAllVoter().subscribe(data => {
-      this.votersList = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as IVoter;
-      });
-    });
-    console.log(this.votersList);
-
+    this.searchService.fetchAllVoter();
   }
 
   create(voter): any {
